@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recycler_view_spheres"
+        tools:listitem="@layout/spheres_list_item"
+        tools:itemCount="5"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fab_extended"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="@color/teal_200"
+            android:text="@string/fab_edit_progress"
+            android:textColor="@color/black"
+            app:icon="@drawable/icon_edit"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fab_restore_progress"
+            app:fabSize="normal"
+            android:backgroundTint="@color/teal_200"
+            android:src="@drawable/icon_restore"
+            android:contentDescription="@string/fab_restore_progress"
+            android:layout_marginStart="5dp"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fab_delete_progress"
+            app:fabSize="normal"
+            android:backgroundTint="@color/teal_200"
+            android:src="@drawable/icon_delete"
+            android:contentDescription="@string/fab_delete_progress"
+            android:layout_marginStart="5dp"/>
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

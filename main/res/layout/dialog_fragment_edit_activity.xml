@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="activity" type="com.example.scheduler.model.Activity"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <EditText
+            android:id="@+id/edit_text_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/description_hint"
+            android:text="@{activity.description ?? @string/empty_string}"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_view_category"
+            android:text="@string/category_hint"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_below="@id/edit_text_name"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp"/>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner_category"
+            android:selectedItemPosition="@{activity != null ? activity.category.categoryName : @string/default_category}"
+            android:textSize="18sp"
+            android:layout_toEndOf="@id/text_view_category"
+            android:layout_below="@id/edit_text_name"
+            android:layout_marginStart="5dp"
+            android:layout_alignBaseline="@id/text_view_category"/>
+
+        <SeekBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/seekbar_completion"
+            android:layout_below="@id/text_view_category"
+            android:layout_marginTop="30dp"
+            android:layout_toEndOf="@id/text_view_completion"
+            android:layout_marginEnd="5dp"
+            android:progressTint="@color/white"
+            android:progressBackgroundTint="@color/grey"
+            android:max="200"
+            android:minWidth="190dp"
+            android:progress="@{activity != null ? activity.completion : 0}"/>
+
+        <TextView
+            android:id="@+id/text_view_completionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seekbar_completion"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="100dp"
+            android:layout_alignStart="@id/seekbar_completion"
+            android:text="@{activity.completionToString() ?? @string/zero_progress}"
+            android:textColor="@color/white"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_view_completion"
+            android:text="@string/completion_hint"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/text_view_category"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_view_pointsLabel"
+            android:text="@string/points_label"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/text_view_completionLabel"
+            android:layout_marginStart="60dp"
+            android:layout_alignBaseline="@id/edit_text_points"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit_text_points"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:text="@{activity.pointsToString() ?? @string/zero_progress}"
+            android:layout_below="@id/text_view_completionLabel"
+            android:layout_toEndOf="@id/text_view_pointsLabel"
+            android:layout_marginTop="30dp"
+            android:inputType="numberDecimal"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/check_box_planned"
+            android:text="@string/is_planned"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_below="@id/text_view_completionLabel"
+            android:layout_alignBaseline="@id/edit_text_points"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="60dp"
+            android:layout_marginTop="5dp"
+            android:checked="@{activity != null ? activity.isPlanned : true}"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_update_day"
+            android:text="@string/button_update"
+            android:layout_below="@id/check_box_planned"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+</layout>

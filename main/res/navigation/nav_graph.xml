@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/spheresFragment">
+
+    <fragment
+        android:id="@+id/spheresFragment"
+        android:name="com.example.scheduler.ui.SpheresFragment"
+        android:label="SpheresFragment" >
+        <action
+            android:id="@+id/action_spheresFragment_to_calendarFragment"
+            app:destination="@id/calendarFragment" />
+        <action
+            android:id="@+id/action_spheresFragment_to_activitiesByCategoryFragment"
+            app:destination="@id/activitiesByCategoryFragment" />
+        <action
+            android:id="@+id/action_spheresFragment_to_progressFragment"
+            app:destination="@id/progressFragment" />
+        <action
+            android:id="@+id/action_spheresFragment_to_deleteProgressDialogFragment"
+            app:destination="@id/deleteProgressDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.scheduler.ui.CalendarFragment"
+        android:label="CalendarFragment" >
+        <action
+            android:id="@+id/action_calendarFragment_to_dayFragment"
+            app:destination="@id/dayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dayFragment"
+        android:name="com.example.scheduler.ui.DayFragment"
+        android:label="DayFragment" >
+        <argument
+            android:name="dateArg"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_dayFragment_to_editActivityDialogFragment"
+            app:destination="@id/editActivityDialogFragment" />
+        <action
+            android:id="@+id/action_dayFragment_to_spheresFragment"
+            app:destination="@id/spheresFragment" />
+        <action
+            android:id="@+id/action_dayFragment_to_calendarFragment"
+            app:destination="@id/calendarFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/editActivityDialogFragment"
+        android:name="com.example.scheduler.ui.EditActivityDialogFragment"
+        android:label="EditActivityDialogFragment" >
+        <argument
+            android:name="activityArg"
+            app:argType="com.example.scheduler.model.Activity" />
+        <argument
+            android:name="dayArg"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_editActivityDialogFragment_to_dayFragment"
+            app:destination="@id/dayFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/activitiesByCategoryFragment"
+        android:name="com.example.scheduler.ui.ActivitiesByCategoryFragment"
+        android:label="ActivitiesByCategoryFragment" />
+    <fragment
+        android:id="@+id/progressFragment"
+        android:name="com.example.scheduler.ui.ProgressFragment"
+        android:label="ProgressFragment" />
+    <dialog
+        android:id="@+id/deleteProgressDialogFragment"
+        android:name="com.example.scheduler.ui.DeleteProgressDialogFragment"
+        android:label="DeleteProgressDialogFragment" >
+        <action
+            android:id="@+id/action_deleteProgressDialogFragment_to_spheresFragment"
+            app:destination="@id/spheresFragment" />
+        <action
+            android:id="@+id/action_deleteProgressDialogFragment_to_createProgressDialogFragment"
+            app:destination="@id/createProgressDialogFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/createProgressDialogFragment"
+        android:name="com.example.scheduler.ui.CreateProgressDialogFragment"
+        android:label="CreateProgressDialogFragment" >
+        <action
+            android:id="@+id/action_createProgressDialogFragment_to_deleteProgressDialogFragment"
+            app:destination="@id/deleteProgressDialogFragment" />
+    </dialog>
+</navigation>

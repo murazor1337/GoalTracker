@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Scheduler</string>
+    <string name="preferences_key">shared_preferences_key</string>
+    <string name="sphere_level_label">Level:</string>
+    <string name="sphere_level_progress">/100</string>
+
+    <string name="item_calendar">Calendar</string>
+    <string name="item_progress">Progress</string>
+
+    <string name="selected_day">Selected day:</string>
+    <string name="activity_name_label">Description:</string>
+    <string name="category_label">Category:</string>
+    <string name="completion_label">Completion:</string>
+    <string name="points_label">Points:</string>
+    <string name="is_planned">Planned</string>
+    <string name="fab_description">Add new activity</string>
+    <string name="button_text">Save day</string>
+    <string name="button_delete_day">Delete day</string>
+    <string name="button_back">Back</string>
+
+    <string-array name="categories_array">
+        <item>Health</item>
+        <item>Socialisation</item>
+        <item>Career</item>
+        <item>Education</item>
+        <item>Self development</item>
+    </string-array>
+
+    <string-array name="categories_progress_array">
+        <item>All</item>
+        <item>Health</item>
+        <item>Socialisation</item>
+        <item>Career</item>
+        <item>Education</item>
+        <item>Self development</item>
+    </string-array>
+
+    <string name="description_hint">Description</string>
+    <string name="category_hint">Category</string>
+    <string name="completion_hint">Completion</string>
+    <string name="points_hint">Points</string>
+    <string name="empty_string"> </string>
+    <string name="zero_progress">0</string>
+    <string name="button_update">Update</string>
+
+    <string name="activity_category">Category -</string>
+    <string name="default_category">Health</string>
+
+    <string name="fab_edit_progress">Edit progress</string>
+    <string name="fab_delete_progress">Delete</string>
+    <string name="fab_restore_progress">Restore</string>
+
+    <string name="progress">Progress:</string>
+    <string name="save_progress">Save</string>
+    <string name="new_progress">New progress</string>
+    <string name="button_delete_progress">Delete</string>
+
+    <string name="button_ok">OK</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="hint_progress_name">Progress name</string>
+
+</resources>
